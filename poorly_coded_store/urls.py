@@ -3,5 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('checkout/', views.checkout)
+    path('store', views.store),
+    path('process/<int:id>', views.process),
+    path('store/checkout', views.success)
 ]

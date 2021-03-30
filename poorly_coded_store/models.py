@@ -7,7 +7,8 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Order(models.Model):
-    quantity_ordered = models.IntegerField()
-    total_price = models.DecimalField(decimal_places=2, max_digits=6)
+    quantity=models.IntegerField()
+    total_charge=models.IntegerField()
+    items_ordered=models.ManyToManyField(Product, related_name="orders")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
